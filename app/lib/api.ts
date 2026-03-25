@@ -11,6 +11,7 @@ const resolveToken = (mode: AuthMode) => {
   return null;
 };
 
+
 const fetchWithAuth = async (mode: AuthMode, path: string, options: ApiFetchOptions = {}) => {
   const { auth: _auth, ...requestOptions } = options;
   const token = resolveToken(mode);

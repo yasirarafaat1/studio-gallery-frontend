@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { Crown, Loader2, Trash2 } from "lucide-react";
 
 type MediaItem = {
@@ -36,7 +36,7 @@ export default function GalleryItemCard({
           <input type="checkbox" checked={selected} onChange={onToggleSelect} />
           Select
         </label>
-        {isCover ? <Crown className="h-4 w-4 text-emerald-200" aria-label="Cover" title="Cover" /> : null}
+        {isCover ? <Crown className="h-4 w-4 text-emerald-200" aria-label="Cover" /> : null}
       </div>
       <button onClick={onOpen} className="mt-2 w-full text-left">
         <div className="overflow-hidden rounded-xl border border-white/10 bg-black/40">
@@ -72,3 +72,4 @@ export default function GalleryItemCard({
     </div>
   );
 }
+

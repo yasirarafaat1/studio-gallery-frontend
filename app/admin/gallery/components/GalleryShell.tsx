@@ -138,12 +138,12 @@ export default function GalleryShell() {
   const handleAssignEmails = async () => {
     if (!activeGroup) return;
     const emails = assignEmails.split(",").map((email) => email.trim()).filter(Boolean);
-    if (emails.length !== 1) {
-      setActionMessage("Only one email at a time.");
-      return;
-    }
     if (emails.length === 0) {
       setActionMessage("Enter at least one email.");
+      return;
+    }
+    if (emails.length !== 1) {
+      setActionMessage("Only one email at a time.");
       return;
     }
     const nextTitle = editTitle.trim() || activeGroup.title;
@@ -302,6 +302,10 @@ export default function GalleryShell() {
     </div>
   );
 }
+
+
+
+
 
 
 

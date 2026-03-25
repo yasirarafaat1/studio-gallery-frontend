@@ -1,10 +1,11 @@
-export type MediaItem = {
+﻿export type MediaItem = {
   _id: string;
   title?: string;
   description?: string;
   secureUrl: string;
   resourceType?: string;
   isCover?: boolean;
+  allowedUsers?: Array<string | { email?: string }>;
   createdAt?: string;
 };
 
@@ -50,7 +51,7 @@ export const groupMedia = (items: MediaItem[]) => {
         imageCount: 0,
         videoCount: 0,
         coverUrl: item.secureUrl,
-        coverType: item.resourceType === "video" ? "video" : "image",
+        coverType: item.resourceType === "video" ? "video" as const : "image" as const,
       });
     }
     const group = map.get(key);
@@ -68,7 +69,7 @@ export const groupMedia = (items: MediaItem[]) => {
     return {
       ...group,
       coverUrl: cover?.secureUrl || group.coverUrl,
-      coverType: cover?.resourceType === "video" ? "video" : "image",
+      coverType: cover?.resourceType === "video" ? "video" as const : "image" as const,
     };
   });
 };
@@ -85,3 +86,6 @@ export const sortItems = (items: MediaItem[], sortBy: SortKey) => {
     return direction * (aTime - bTime);
   });
 };
+
+
+

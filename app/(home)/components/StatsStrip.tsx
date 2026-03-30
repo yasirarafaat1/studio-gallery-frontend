@@ -7,7 +7,7 @@
 
 export default function StatsStrip() {
   return (
-    <section className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6 text-center sm:grid-cols-2 lg:grid-cols-4">
+    <section className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 px-6 py-10 text-center sm:grid-cols-2 lg:grid-cols-4">
       {stats.map((stat) => (
         <div key={stat.label} className="flex flex-col gap-2">
           <p className="section-title text-2xl font-semibold text-white">{stat.value}</p>

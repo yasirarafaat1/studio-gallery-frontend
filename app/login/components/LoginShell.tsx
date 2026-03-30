@@ -5,19 +5,19 @@ export default function LoginShell() {
   return (
     <div className="page-wrap flex-1">
       <div className="bg-aurora" />
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-10 sm:px-10">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 md:px-0 py-10 sm:px-10">
         <header className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-lg font-semibold">
+            {/* <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-lg font-semibold">
               SG
-            </div>
+            </div> */}
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Client login</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Login</p>
               <p className="section-title text-lg">Studio Gallery</p>
             </div>
           </div>
           <Link href="/" className="text-sm text-white/80 hover:text-white">
-            Back to home
+            Home
           </Link>
         </header>
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">

@@ -1,19 +1,19 @@
 ﻿const steps = [
   {
-    title: "Upload the shoot",
-    detail: "Drag photos and videos once. Cloudinary handles speed and quality.",
+    title: "Request OTP",
+    detail: "Enter your email to receive a one-time login code.",
   },
   {
-    title: "Assign client email",
-    detail: "Link the gallery to one or more approved client emails.",
+    title: "Verify login",
+    detail: "Use the OTP to unlock your private gallery.",
   },
   {
-    title: "OTP login",
-    detail: "Client verifies with an OTP and lands on their private gallery.",
+    title: "Browse your shoot",
+    detail: "View photos and videos in full screen, sorted and clean.",
   },
   {
-    title: "Download delivered",
-    detail: "Clients can view and download without editing or sharing controls.",
+    title: "Download & favorite",
+    detail: "Save your picks and download in high quality.",
   },
 ];
 
@@ -22,10 +22,9 @@ export default function Process() {
     <section id="flow" className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
       <div className="flex flex-col gap-4">
         <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">Flow</p>
-        <h2 className="section-title text-3xl sm:text-4xl">Smooth from upload to delivery.</h2>
+        <h2 className="section-title text-3xl sm:text-4xl">From OTP to download in minutes.</h2>
         <p className="text-sm leading-relaxed text-[var(--muted)] sm:text-base">
-          The workflow is designed so you never chase files again. Clients only see what they should,
-          and you keep full control over the experience.
+          A simple flow designed for clients: quick login, clear galleries, and instant downloads.
         </p>
       </div>
       <div className="grid gap-4">

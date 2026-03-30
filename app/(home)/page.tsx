@@ -1,4 +1,5 @@
-﻿import Navbar from "./components/Navbar";
+﻿import HomeRedirect from "./components/HomeRedirect";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StatsStrip from "./components/StatsStrip";
 import FeatureGrid from "./components/FeatureGrid";
@@ -10,6 +11,7 @@ import Footer from "./components/Footer";
 export default function HomePage() {
   return (
     <div className="page-wrap flex-1">
+      <HomeRedirect />
       <div className="bg-aurora" />
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-6 pb-16 pt-8 sm:px-10">
         <Navbar />
@@ -26,3 +28,4 @@ export default function HomePage() {
     </div>
   );
 }
+

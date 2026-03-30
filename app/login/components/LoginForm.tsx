@@ -11,11 +11,12 @@ export default function LoginForm() {
   const [otp, setOtp] = useState("");
   const [status, setStatus] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [verifying, setVerifying] = useState(false);
 
   const handleRequestOtp = async () => {
-    if (!email || loading) return;
-    setLoading(true);
+    if (!email || sending || verifying) return;
+    setSending(true);
     setError(null);
     setStatus(null);
     try {
@@ -27,13 +28,13 @@ export default function LoginForm() {
     } catch (err) {
       setError((err as Error).message || "Failed to send OTP.");
     } finally {
-      setLoading(false);
+      setSending(false);
     }
   };
 
   const handleVerify = async () => {
-    if (!email || !otp || loading) return;
-    setLoading(true);
+    if (!email || !otp || verifying || sending) return;
+    setVerifying(true);
     setError(null);
     setStatus(null);
     try {
@@ -48,7 +49,7 @@ export default function LoginForm() {
     } catch (err) {
       setError((err as Error).message || "OTP verification failed.");
     } finally {
-      setLoading(false);
+      setVerifying(false);
     }
   };
 
@@ -70,12 +71,12 @@ export default function LoginForm() {
     <div className="glass p-6">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">OTP login</p>
-          <h2 className="section-title mt-2 text-2xl">Client access</h2>
+          {/* <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">OTP login</p> */}
+          <h2 className="section-title mt-2 text-2xl">Login</h2>
         </div>
-        <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/70">
+        {/* <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white/70">
           Read only
-        </span>
+        </span> */}
       </div>
       <div className="mt-6 space-y-4">
         <div>
@@ -90,10 +91,10 @@ export default function LoginForm() {
         </div>
         <button
           onClick={handleRequestOtp}
-          disabled={!email || loading}
+          disabled={!email || sending || verifying}
           className="w-full rounded-2xl bg-white py-3 text-sm font-semibold text-black transition disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {loading ? "Sending..." : "Send OTP"}
+          {sending ? "Sending..." : "Send OTP"}
         </button>
         <div className="grid gap-3">
           <label className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">OTP Code</label>
@@ -107,10 +108,10 @@ export default function LoginForm() {
         </div>
         <button
           onClick={handleVerify}
-          disabled={!email || !otp || loading}
+          disabled={!email || !otp || verifying || sending}
           className="w-full rounded-2xl border border-white/20 py-3 text-sm font-semibold text-white/90 transition disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {loading ? "Verifying..." : "Verify and Login"}
+          {verifying ? "Verifying..." : "Verify and Login"}
         </button>
       </div>
       {status ? <p className="mt-4 text-xs text-emerald-300">{status}</p> : null}

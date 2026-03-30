@@ -5,7 +5,7 @@ const badges = ["Private galleries", "OTP access", "Download control", "Cloud de
 
 export default function Hero() {
   return (
-    <section className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+    <section className="grid items-center gap-12 py-8 md:py-5 lg:grid-cols-[1.1fr_0.9fr]">
       <div className="stagger flex flex-col gap-6">
         <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">Studio client vault</p>
         <h1 className="section-title text-4xl font-semibold leading-tight sm:text-5xl">
@@ -30,7 +30,7 @@ export default function Hero() {
             href="/login"
             className="rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-black transition hover:brightness-110"
           >
-            Client OTP Login
+            Login
           </Link>
           <Link
             href="#gallery"

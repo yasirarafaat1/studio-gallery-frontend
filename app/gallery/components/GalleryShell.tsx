@@ -126,8 +126,9 @@ export default function GalleryShell() {
       <div className="page-wrap flex-1">
         <div className="bg-aurora" />
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-12">
-          <div className="glass p-6 text-sm text-[var(--muted)]">Please login to view your gallery.</div>
-          <Link href="/login" className="text-sm text-white/70 hover:text-white">Go to client login</Link>
+          <div className="glass p-6 flex items-center justify-between text-sm text-[var(--muted)]">Please login to view your gallery.
+            <Link href="/login" className="border border-white/20 px-4 py-2 rounded-[10px] text-sm text-white/70 hover:text-white">Login</Link>
+          </div>
         </div>
       </div>
     );
@@ -140,9 +141,6 @@ export default function GalleryShell() {
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-12">
           <div className="glass p-6 text-sm text-[var(--muted)]">This page is for clients only.</div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/admin/dashboard" className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/90">
-              Go to admin dashboard
-            </Link>
             <button
               onClick={() => {
                 clearAuth();
@@ -150,7 +148,7 @@ export default function GalleryShell() {
               }}
               className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/90"
             >
-              Login as client
+              Login
             </button>
           </div>
         </div>
@@ -168,7 +166,6 @@ export default function GalleryShell() {
             <h1 className="section-title text-3xl">Welcome {user?.email || "back"}</h1>
           </div>
           <div className="flex items-center gap-3">
-            <Link href="/" className="text-sm text-white/70 hover:text-white">Home</Link>
             <button
               onClick={handleLogout}
               className="rounded-full border border-white/20 cursor-pointer px-4 py-2 text-sm text-white/90 bg-red-500 transition hover:border-white/50"

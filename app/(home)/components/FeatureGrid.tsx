@@ -1,19 +1,19 @@
 ﻿const features = [
   {
-    title: "Per-client access",
-    description: "Map every album to an approved email. Clients see only what belongs to them.",
+    title: "Private access",
+    description: "Your gallery is visible only to your email address.",
   },
   {
-    title: "OTP + token auth",
-    description: "One-time passwords verify identity quickly, with one-day admin sessions.",
+    title: "OTP login",
+    description: "Secure, quick sign-in without passwords or links.",
   },
   {
-    title: "Cloudinary delivery",
-    description: "Images and videos stream from the cloud with fast previews and downloads.",
+    title: "HD photos & video",
+    description: "Stream or download in full quality whenever you need.",
   },
   {
-    title: "Admin control center",
-    description: "Upload, approve clients, and send access notifications in a clean workflow.",
+    title: "Favorites list",
+    description: "Mark favorites and come back to them anytime.",
   },
 ];
 
@@ -23,11 +23,11 @@ export default function FeatureGrid() {
       <div className="flex flex-col gap-4">
         <p className="text-xs uppercase tracking-[0.4em] text-[var(--muted)]">Features</p>
         <h2 className="section-title text-3xl sm:text-4xl">
-          Built for studios that want polish and privacy.
+          A clean, premium viewing experience for every client.
         </h2>
         <p className="max-w-xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
-          Every interaction is crafted to feel premium: automated OTP access, curated galleries, and clear
-          admin ownership. Your clients get clarity, not confusion.
+          Everything you need to view, choose, and download your shoot — simple, secure, and
+          distraction-free.
         </p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">

@@ -98,13 +98,13 @@ export default function HeroCard() {
               onChange={(event) => setOtp(event.target.value)}
               onKeyDown={handleOtpKeyDown}
               placeholder="OTP"
-              className="h-10 w-full flex-1 rounded-xl border border-white/10 bg-white/5 px-3 text-sm text-white outline-none focus:border-white/30"
+              className="h-12 sm:h-10 min-h-[40px] w-full flex-1 rounded-xl border border-white/10 bg-white/5 px-3 text-sm text-white outline-none focus:border-white/30"
             />
             <button
               type="button"
               onClick={handlePrimary}
               disabled={!email || loading}
-              className="h-10 w-28 rounded-xl bg-white text-xs font-semibold text-black transition disabled:cursor-not-allowed disabled:opacity-60"
+              className="h-12 sm:h-10 min-h-[40px] w-28 rounded-xl bg-white text-xs font-semibold text-black transition disabled:cursor-not-allowed disabled:opacity-60"
             >
               {loading ? "Sending..." : otp ? "Login" : "Send OTP"}
             </button>
@@ -133,3 +133,5 @@ export default function HeroCard() {
     </div>
   );
 }
+
+

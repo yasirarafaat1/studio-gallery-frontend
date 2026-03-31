@@ -163,7 +163,8 @@ export default function GalleryShell() {
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">Client gallery</p>
-            <h1 className="section-title text-3xl">Welcome {user?.email || "back"}</h1>
+            <h1 className="section-title text-3xl">Welcome</h1>
+            <p className="mt-2 text-sm text-[var(--muted)] break-all sm:break-normal">{user?.email || "back"}</p>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -208,5 +209,7 @@ export default function GalleryShell() {
     </div>
   );
 }
+
+
 
 

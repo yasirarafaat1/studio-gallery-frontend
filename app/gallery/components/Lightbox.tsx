@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { MediaItem } from "./galleryHelpers";
 
@@ -15,10 +15,10 @@ export default function Lightbox({ items, activeIndex, onClose, onPrev, onNext }
   if (!item) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6">
       <button
         onClick={onClose}
-        className="absolute right-6 top-6 cursor-pointer rounded-full border border-white/30 p-2 text-white"
+        className="absolute right-3 top-3 cursor-pointer rounded-full border border-white/30 p-2 text-white sm:right-6 sm:top-6"
         aria-label="Close"
         title="Close"
       >
@@ -26,7 +26,7 @@ export default function Lightbox({ items, activeIndex, onClose, onPrev, onNext }
       </button>
       <button
         onClick={onPrev}
-        className="absolute left-6 top-1/2 -translate-y-1/2 cursor-pointer rounded-full border border-white/20 p-2 text-white/90"
+        className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full border border-white/20 p-2 text-white/90 sm:left-6"
         aria-label="Previous"
         title="Previous"
       >
@@ -34,7 +34,7 @@ export default function Lightbox({ items, activeIndex, onClose, onPrev, onNext }
       </button>
       <button
         onClick={onNext}
-        className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer rounded-full border border-white/20 p-2 text-white/90"
+        className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full border border-white/20 p-2 text-white/90 sm:right-6"
         aria-label="Next"
         title="Next"
       >
@@ -48,7 +48,7 @@ export default function Lightbox({ items, activeIndex, onClose, onPrev, onNext }
         ) : (
           <img src={item.secureUrl} alt={item.title || "Media"} className="max-h-[80vh] w-full object-contain" />
         )}
-        <div className="flex items-center justify-between border-t border-white/10 px-5 py-4 text-sm text-white/90">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-white/10 px-5 py-4 text-sm text-white/90">
           <span>{item.title || "Untitled"}</span>
           <span className="text-xs text-[var(--muted)]">
             {activeIndex + 1} / {items.length}
